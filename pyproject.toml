@@ -21,13 +21,4 @@ dependencies = [
 dynamic = ["version"]
 
 [project.entry-points."sphinx.html_themes"]
-integral_sphinx_theme = "integral_sphinx_theme"
-#
-#[tool.setuptools]
-#include-package-data = true
-#
-#[tool.setuptools.packages.find]
-#where = ["src"]
-#
-#[tool.setuptools.package-data]
-#integral_sphinx_theme = ["theme.conf"]
+sphinx_integral_theme = "sphinx_integral_theme"
