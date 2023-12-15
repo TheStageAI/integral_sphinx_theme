@@ -43,7 +43,7 @@
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
 
-    <nav class="sphinxsidebar" id="left-menu">
+    <nav class="sphinxsidebar" id="pytorch-left-menu">
       <div class="side-scroll">
         <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           <div class="left-menu-search">
@@ -104,7 +104,7 @@
           {% endif %}
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
             {%- block document %}
-             <article itemprop="articleBody" class="article">
+             <article itemprop="articleBody" class="pytorch-article">
               {% block body %}{% endblock %}
              </article>
              {% if self.comments()|trim %}
@@ -120,8 +120,8 @@
         </div>
 
         <div class="content-right">
-          <div class="right-menu" id="right-menu">
-            <div class="side-scroll" id="side-scroll-right">
+          <div class="pytorch-right-menu" id="right-menu">
+            <div class="pytorch-side-scroll" id="side-scroll-right">
               {{ toc }}
             </div>
           </div>
