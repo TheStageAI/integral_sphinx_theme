@@ -218,13 +218,13 @@ input[type="submit"]:hover {
 .highlight {
   margin-top: 32px;
   margin-bottom: 32px;
-  padding: 16px 40px 16px 16px;
   font-size: 14px;
   background-color: #171b21;
 }
 
 .highlight * {
   font-family: 'DM Mono', monospace;
+  color: #fff;
 }
 
 .main {
@@ -1772,19 +1772,28 @@ article.pytorch-article table {
   width: 100%;
 }
 article.pytorch-article table thead {
-  border-bottom: 1px solid #cacaca;
+  border-bottom: 1px solid #2a2d33;
 }
 article.pytorch-article table th {
-  padding: 0.625rem;
+  padding: 16px;
+}
+article.pytorch-article table th p {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.40);
+}
+
+article.pytorch-article table td {
+  padding: 16px;
+}
+
+article.pytorch-article table td p {
+  margin: 0;
+  font-size: 14px;
   color: #fff;
 }
-article.pytorch-article table td {
-  padding: 0.3125rem;
-}
-article.pytorch-article table tr th:first-of-type,
-article.pytorch-article table tr td:first-of-type {
-  padding-left: 0;
-}
+
 article.pytorch-article table.docutils.field-list th.field-name {
   padding: 0.3125rem;
   padding-left: 0;
@@ -2036,8 +2045,8 @@ article.pytorch-article .class .method dt.field-even, article.pytorch-article .c
 
 article.pytorch-article .function dt.sig {
   position: relative;
-  background: #f3f4f7;
-  padding: 0.8rem;
+  background: #171b21;
+  padding: 0.5rem;
   border-left: 3px solid #fbcb0a;
   word-wrap: break-word;
   padding-right: 100px;
@@ -2045,7 +2054,7 @@ article.pytorch-article .function dt.sig {
 }
 
 article.pytorch-article .function dt {
-  background: #ffffff;
+  background: #171b21;
   padding-right: -20px;
   border-left: none;
   border-top: none;
@@ -2208,10 +2217,24 @@ article.pytorch-article .caution,
 article.pytorch-article .danger,
 article.pytorch-article .attention,
 article.pytorch-article .error {
-  background: #f3f4f7;
-  margin-top: 1.875rem;
-  margin-bottom: 1.125rem;
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding: 16px;
+  background: #171B21;
+  border-radius: 0px 8px 8px 0px;
 }
+
+.admonition:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  border-radius: 8px 0px 0px 8px;
+}
+
 article.pytorch-article .note .admonition-title,
 article.pytorch-article .warning .admonition-title,
 article.pytorch-article .tip .admonition-title,
@@ -2222,42 +2245,17 @@ article.pytorch-article .caution .admonition-title,
 article.pytorch-article .danger .admonition-title,
 article.pytorch-article .attention .admonition-title,
 article.pytorch-article .error .admonition-title {
-  color: #ffffff;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 1.125rem;
-  padding: 3px 0 3px 1.375rem;
   position: relative;
-  font-size: 0.875rem;
-}
-article.pytorch-article .note .admonition-title:before,
-article.pytorch-article .warning .admonition-title:before,
-article.pytorch-article .tip .admonition-title:before,
-article.pytorch-article .seealso .admonition-title:before,
-article.pytorch-article .hint .admonition-title:before,
-article.pytorch-article .important .admonition-title:before,
-article.pytorch-article .caution .admonition-title:before,
-article.pytorch-article .danger .admonition-title:before,
-article.pytorch-article .attention .admonition-title:before,
-article.pytorch-article .error .admonition-title:before {
-  content: "\2022";
-  position: absolute;
-  left: 9px;
+  margin-top: 0;
+  font-size: 14px;
   color: #ffffff;
-  top: 2px;
+  text-transform: uppercase;
 }
-article.pytorch-article .note p:nth-child(n + 2),
-article.pytorch-article .warning p:nth-child(n + 2),
-article.pytorch-article .tip p:nth-child(n + 2),
-article.pytorch-article .seealso p:nth-child(n + 2),
-article.pytorch-article .hint p:nth-child(n + 2),
-article.pytorch-article .important p:nth-child(n + 2),
-article.pytorch-article .caution p:nth-child(n + 2),
-article.pytorch-article .danger p:nth-child(n + 2),
-article.pytorch-article .attention p:nth-child(n + 2),
-article.pytorch-article .error p:nth-child(n + 2) {
-  padding: 0 1.375rem;
+
+article.pytorch-article .admonition-title:after {
+  content: ':';
 }
+
 article.pytorch-article .note table,
 article.pytorch-article .warning table,
 article.pytorch-article .tip table,
@@ -2382,43 +2380,84 @@ article.pytorch-article .attention p,
 article.pytorch-article .error p {
   margin-top: 1.125rem;
 }
-article.pytorch-article .note .admonition-title {
-  background: #54c7ec;
+.admonition.note:before {
+  background: #4c95f7;
 }
-article.pytorch-article .warning .admonition-title {
-  background: #e94f3b;
+.admonition.warning:before {
+  background: #db3936;
 }
-article.pytorch-article .tip .admonition-title {
+.admonition.tip:before {
   background: #6bcebb;
 }
-article.pytorch-article .seealso .admonition-title {
+.admonition.seealso:before {
   background: #6bcebb;
 }
-article.pytorch-article .hint .admonition-title {
+.admonition.hint:before {
   background: #a2cdde;
 }
-article.pytorch-article .important .admonition-title {
+.admonition.important:before {
   background: #5890ff;
 }
-article.pytorch-article .caution .admonition-title {
+.admonition.caution:before {
   background: #f7923a;
 }
-article.pytorch-article .danger .admonition-title {
+.admonition.danger:before {
   background: #db2c49;
 }
-article.pytorch-article .attention .admonition-title {
+.admonition.attention:before {
   background: #f5a623;
 }
-article.pytorch-article .error .admonition-title {
+.admonition.error:before {
   background: #cc2f90;
+}
+
+article.pytorch-article .note .admonition-title {
+  color: #4c95f7;
+}
+
+article.pytorch-article .warning .admonition-title {
+  color: #db3936;
+}
+
+article.pytorch-article .tip .admonition-title {
+  color: #6bcebb;
+}
+
+article.pytorch-article .seealso .admonition-title {
+  color: #6bcebb;
+}
+
+article.pytorch-article .hint .admonition-title {
+  color: #a2cdde;
+}
+
+article.pytorch-article .important .admonition-title {
+  color: #5890ff;
+}
+
+article.pytorch-article .caution .admonition-title {
+  color: #f7923a;
+}
+
+article.pytorch-article .danger .admonition-title {
+  color: #db2c49;
+}
+
+article.pytorch-article .attention .admonition-title {
+  color: #f5a623;
+}
+
+article.pytorch-article .error .admonition-title {
+  color: #cc2f90;
 }
 
 article.pytorch-article .reference.download.internal, article.pytorch-article .sphx-glr-signature {
   display: none;
 }
+
 article.pytorch-article .admonition > p:last-of-type {
   margin-bottom: 0;
-  padding-bottom: 1.125rem !important;
+  padding-bottom: 0 !important;
 }
 
 .pytorch-article p.sphx-glr-script-out {
@@ -2454,8 +2493,9 @@ article.pytorch-article .wy-table-responsive table thead th {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
 }
+article.pytorch-article table tbody .row-odd,
 article.pytorch-article .wy-table-responsive table tbody .row-odd {
-  background-color: #f3f4f7;
+  background-color: rgba(255, 255, 255, 0.02);
 }
 article.pytorch-article .wy-table-responsive table tbody td {
   color: #6c6c6d;
