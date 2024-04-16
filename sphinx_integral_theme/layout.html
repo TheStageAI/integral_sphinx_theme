@@ -130,6 +130,22 @@
     </div>
   </div>
 
+  {%- block footer %} {% endblock %}
+
+  {% if not embedded %}
+
+     {% if sphinx_version >= "1.8.0" %}
+       {%- for scriptfile in script_files %}
+         {{ js_tag(scriptfile) }}
+       {%- endfor %}
+
+       <script>
+        DOCUMENTATION_OPTIONS.SHOW_SEARCH_SUMMARY = false;
+       </script>
+     {% endif %}
+
+  {% endif %}
+
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{ pathto('_static/scripts.js', 1) }}"></script>
 </body>
