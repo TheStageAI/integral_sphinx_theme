@@ -88,14 +88,24 @@ h3 {
 }
 
 .sphinxsidebar {
+  position: relative;
   flex-basis: 390px;
   flex-grow: 0;
   flex-shrink: 0;
+  height: calc(100% - 46px);
+  overflow: hidden;
   margin-right: 48px;
   padding: 24px 30px;
+  padding-right: 0;
   background-color: #171b21;
   border-right: 1px solid #2a2d33;
   box-sizing: border-box;
+}
+
+.side-scroll {
+  height: 100%;
+  padding-right: 30px;
+  overflow: scroll;
 }
 
 form {
@@ -187,6 +197,9 @@ input[type="submit"]:hover {
   display: block;
   padding: 10px;
   padding-left: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #fff;
   text-decoration: none;
   background-color: transparent;
@@ -259,8 +272,11 @@ input[type="submit"]:hover {
 }
 
 #side-scroll-right > ul > li > a {
+  overflow: hidden;
   font-weight: 500;
   color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #side-scroll-right > ul > li > ul > li > a {
@@ -610,6 +626,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 500;
   color: inherit;
+  word-break: break-word;
 }
 
 .h1 {
